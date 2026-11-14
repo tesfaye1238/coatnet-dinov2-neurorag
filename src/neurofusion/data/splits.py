@@ -42,7 +42,7 @@ def group_stratified_split(
     rng = np.random.default_rng(seed)
     gt = _group_table(df)
     split_of: dict[str, str] = {}
-    for cls, sub in gt.groupby("label"):
+    for _cls, sub in gt.groupby("label"):
         total = int(sub["n"].sum())
         if per_class_counts:
             tv = int(per_class_counts.get("val", 0))
