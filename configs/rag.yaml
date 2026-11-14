@@ -1,0 +1,25 @@
+# CANDIDATE settings from revision planning. None is verified as the settings behind the reported results.
+embedder:
+  model: BAAI/bge-base-en-v1.5
+  revision: null            # pin a commit before reporting results
+  dim: 768
+  normalize: true
+  query_instruction: "Represent this sentence for searching relevant passages: "
+chunking:
+  max_tokens: 512           # includes special tokens; checked with the model tokenizer
+  overlap: 64
+retrieval:
+  similarity: cosine
+  top_k_candidates: 10
+  top_k_context: 5
+  category_filter: true
+  reranker: none
+generation:
+  model_id: Qwen/Qwen2.5-7B-Instruct   # candidate checkpoint, unconfirmed
+  revision: null
+  do_sample: false
+  max_new_tokens: 512
+  context_token_budget: 3000
+  quantization: null
+safeguards:
+  confidence_threshold: null  # any value must be chosen on development data, never on the evaluation queries

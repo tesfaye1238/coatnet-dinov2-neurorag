@@ -1,0 +1,28 @@
+# Proposed model: CoAtNet-0 + DINOv2 ViT-S/14, concatenation, SE (r=8).
+# train: values marked REPORTED come from the manuscript (section 5, Table 3). Others are reconstruction choices.
+model: proposed
+train:
+  batch_size: 32        # REPORTED
+  peak_lr: 3.0e-4       # REPORTED
+  weight_decay: 5.0e-4  # REPORTED
+  warmup_epochs: 5      # REPORTED
+  min_lr: 1.0e-6        # REPORTED
+  max_epochs: 100       # REPORTED
+  patience: 10          # REPORTED (monitor: validation loss)
+  amp: false            # reconstruction choice
+  grad_clip: null       # reconstruction choice (unreported)
+  num_workers: 0
+augmentation:
+  hflip_p: 0.50         # REPORTED
+  vflip_p: 0.50         # REPORTED
+  rotation_deg: 15.0    # REPORTED
+  zoom: [0.90, 1.10]    # REPORTED
+  brightness: 0.10      # REPORTED
+  noise_std: 0.01       # REPORTED
+  erase_p: 0.10         # REPORTED
+  # unreported, reconstruction assumptions:
+  erase_scale: [0.02, 0.33]
+  erase_ratio: [0.3, 3.3]
+  erase_value: 0.0
+  fill: 0.0
+  noise_clip: true

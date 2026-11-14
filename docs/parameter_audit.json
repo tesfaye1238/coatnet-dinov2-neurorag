@@ -1,0 +1,43 @@
+{
+  "variants": {
+    "proposed": {
+      "instantiated_M": 49.285,
+      "reported_M": 49.2,
+      "offset_M": 0.0849
+    },
+    "concat_no_attention": {
+      "instantiated_M": 48.9519,
+      "reported_M": 48.87,
+      "offset_M": 0.0819
+    },
+    "concat_se_r16": {
+      "instantiated_M": 49.119,
+      "reported_M": 49.03,
+      "offset_M": 0.089
+    },
+    "sum_se_r8": {
+      "instantiated_M": 49.1993,
+      "reported_M": 49.11,
+      "offset_M": 0.0893
+    }
+  },
+  "differences_M": {
+    "se_r8_minus_no_attention": {
+      "instantiated": 0.3331,
+      "reported": 0.33
+    },
+    "se_r8_minus_se_r16": {
+      "instantiated": 0.166,
+      "reported": 0.17
+    },
+    "concat_se_r8_minus_sum_se_r8": {
+      "instantiated": 0.0857,
+      "reported": 0.09
+    }
+  },
+  "single_branch_M": {
+    "coatnet_only": 27.1265,
+    "dinov2_only": 21.8921
+  },
+  "interpretation": "Differences between variants agree with the reported ones to rounding, which supports the SE layer structure, the head sizes and a 384->768 projection for the summation ablation. A constant offset of the totals indicates the backbone parameter count differs slightly from the authors' (e.g. a different CoAtNet-0 implementation or DINOv2 position-embedding handling). Agreement is evidence of consistency, not verification of the original code."
+}

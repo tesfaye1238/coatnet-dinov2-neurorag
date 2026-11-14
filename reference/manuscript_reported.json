@@ -1,0 +1,118 @@
+{
+  "_provenance": "Values transcribed by hand from the supplied manuscript 'Attention-Guided CoAtNet-DINOv2 Fusion for Brain MRI Classification and Retrieval-Augmented Reporting' (MRI DAIjghfds_up4.pdf) and its supplementary PDF. These are PAPER-REPORTED values, not measurements made by this repository. They are used only as audit/reconciliation references.",
+  "n_test": 1600,
+  "table1": {
+    "classes": ["glioma", "meningioma", "notumor", "pituitary"],
+    "raw": [1812, 1808, 1811, 1809],
+    "exact": [24, 21, 19, 16],
+    "near": [33, 31, 38, 36],
+    "final": [1755, 1756, 1754, 1757],
+    "train": [1195, 1196, 1194, 1197],
+    "val": [160, 160, 160, 160],
+    "test": [400, 400, 400, 400],
+    "totals": {"raw": 7240, "exact": 80, "near": 138, "final": 7022, "train": 4782, "val": 640, "test": 1600},
+    "source": "Table 1"
+  },
+  "figure2_class_counts": {
+    "train": {"glioma": 1321, "meningioma": 1339, "pituitary": 1457, "notumor": 1595},
+    "test": {"glioma": 400, "meningioma": 400, "pituitary": 400, "notumor": 400},
+    "source": "Figure 2 pie-chart labels (read from the figure)"
+  },
+  "table4": {
+    "source": "Table 4 (accuracy, macro precision, macro recall, macro F1; %)",
+    "rows": {
+      "Proposed": [99.31, 99.31, 99.31, 99.31],
+      "GhostNetV2": [99.08, 99.07, 99.02, 99.04],
+      "ConvNeXt-T": [98.94, 98.98, 99.03, 99.00],
+      "Swin-Transformer-T": [98.94, 98.91, 98.82, 98.86],
+      "ESPNetV2": [98.86, 98.75, 98.82, 98.78],
+      "MobileNetV2": [98.71, 98.68, 98.63, 98.65],
+      "ShuffleNetV2": [98.31, 98.27, 98.21, 98.24]
+    }
+  },
+  "section6_1_text": {"accuracy": 99.31, "precision": 99.24, "recall": 99.11, "f1": 99.17, "source": "Section 6.1 narrative"},
+  "confusion_matrix_figure8": {
+    "class_order": ["glioma", "meningioma", "notumor", "pituitary"],
+    "matrix": [[396, 4, 0, 0], [1, 395, 0, 4], [1, 0, 399, 0], [0, 1, 0, 399]],
+    "source": "Figure 8"
+  },
+  "per_class_section6_1": {
+    "glioma": {"precision": 0.9950, "recall": 0.9900, "f1": 0.9925},
+    "meningioma": {"precision": 0.9875, "recall": 0.9875, "f1": 0.9875},
+    "notumor": {"precision": 1.0000, "recall": 0.9975, "f1": 0.9987},
+    "pituitary": {"precision": 0.9901, "recall": 0.9975, "f1": 0.9938},
+    "source": "Section 6.1 and Figure 7"
+  },
+  "auc_ap": {
+    "auc": {"glioma": 0.993, "meningioma": 0.994, "notumor": 1.000, "pituitary": 1.000},
+    "ap": {"glioma": 0.9994, "meningioma": 0.9954, "notumor": 0.9947, "pituitary": 0.9982},
+    "macro_ap": 0.9969,
+    "source": "Sections 6.3, 6.4; Figures 9, 10"
+  },
+  "table5": {
+    "source": "Table 5",
+    "rows": {
+      "coatnet_only": {"acc": 98.06, "ci": [97.31, 98.69], "delta": -1.25},
+      "dinov2_only": {"acc": 98.31, "ci": [97.56, 98.94], "delta": -1.00},
+      "concat_no_attention": {"acc": 98.94, "ci": [98.31, 99.44], "delta": -0.38},
+      "concat_se_r16": {"acc": 99.12, "ci": [98.50, 99.56], "delta": -0.19},
+      "sum_se_r8": {"acc": 98.81, "ci": [98.19, 99.31], "delta": -0.50},
+      "proposed": {"acc": 99.31, "ci": [98.81, 99.69], "delta": 0.00}
+    },
+    "params_millions": {"proposed": 49.20, "concat_no_attention": 48.87, "concat_se_r16": 49.03, "sum_se_r8": 49.11}
+  },
+  "table6": {
+    "source": "Table 6 (params M, latency ms, throughput img/s, accuracy %, accuracy per M params)",
+    "rows": {
+      "ShuffleNetV2": {"params": 2.3, "latency": 4.2, "throughput": 238.1, "acc": 98.31, "acc_per_m": 42.74},
+      "MobileNetV2": {"params": 3.5, "latency": 5.1, "throughput": 196.1, "acc": 98.71, "acc_per_m": 28.20},
+      "ESPNetV2": {"params": 3.5, "latency": 5.7, "throughput": 175.4, "acc": 98.86, "acc_per_m": 28.25},
+      "GhostNetV2": {"params": 6.1, "latency": 6.4, "throughput": 156.3, "acc": 99.08, "acc_per_m": 16.24},
+      "Swin-Transformer-T": {"params": 28.3, "latency": 16.3, "throughput": 61.3, "acc": 98.94, "acc_per_m": 3.50},
+      "ConvNeXt-T": {"params": 28.6, "latency": 15.8, "throughput": 63.3, "acc": 98.94, "acc_per_m": 3.46},
+      "Proposed": {"params": 49.2, "latency": 31.7, "throughput": 31.5, "acc": 99.31, "acc_per_m": 2.02}
+    }
+  },
+  "table7A": {
+    "source": "Table 7A",
+    "folds": [
+      {"train": 5055, "val": 562, "test": 1405, "acc": 99.43, "f1": 99.39, "auc": 0.998},
+      {"train": 5055, "val": 562, "test": 1405, "acc": 99.29, "f1": 99.26, "auc": 0.996},
+      {"train": 5056, "val": 562, "test": 1404, "acc": 98.93, "f1": 98.91, "auc": 0.995},
+      {"train": 5056, "val": 562, "test": 1404, "acc": 99.36, "f1": 99.31, "auc": 0.997},
+      {"train": 5056, "val": 562, "test": 1404, "acc": 98.86, "f1": 98.83, "auc": 0.993}
+    ],
+    "mean_sd": {"acc": [99.17, 0.26], "f1": [99.14, 0.25], "auc": [0.996, 0.002]}
+  },
+  "table7B": {
+    "source": "Table 7B (leave-one-source-out)",
+    "rows": [
+      {"test_source": "figshare", "train_sources": ["SARTAJ", "Br35H"], "n_test": 3064, "acc": 97.42, "drop": 1.89},
+      {"test_source": "SARTAJ", "train_sources": ["figshare", "Br35H"], "n_test": 3264, "acc": 96.18, "drop": 3.13},
+      {"test_source": "Br35H", "train_sources": ["figshare", "SARTAJ"], "n_test": 694, "acc": 94.81, "drop": 4.50}
+    ]
+  },
+  "tableS5": {
+    "source": "Supplementary Table S5 (McNemar chi2 / p; accuracy difference vs proposed, pp)",
+    "rows": {
+      "GhostNetV2": {"delta_acc": 0.23, "mcnemar_chi2": 4.00, "mcnemar_p": 0.046},
+      "Swin-Transformer-T": {"delta_acc": 0.38, "mcnemar_chi2": 6.00, "mcnemar_p": 0.014},
+      "ConvNeXt-T": {"delta_acc": 0.38, "mcnemar_chi2": 6.00, "mcnemar_p": 0.014},
+      "ESPNetV2": {"delta_acc": 0.45, "mcnemar_chi2": 7.00, "mcnemar_p": 0.008},
+      "MobileNetV2": {"delta_acc": 0.60, "mcnemar_chi2": 7.14, "mcnemar_p": 0.008},
+      "ShuffleNetV2": {"delta_acc": 1.00, "mcnemar_chi2": 14.22, "mcnemar_p": 0.001}
+    },
+    "bonferroni_threshold": 0.0083
+  },
+  "claims": {
+    "source": "Manuscript revision planning as supplied in the task brief (counts supplied by the requester; NOT found in the manuscript text)",
+    "supported": 847, "unverifiable": 68, "contradicted": 85,
+    "reported_hallucination_rate_pct": 8.5
+  },
+  "provenance_statements": {
+    "zenodo_record_cited_as_dataset": "10.5281/zenodo.7786009",
+    "source_sizes_table7B": {"figshare": 3064, "SARTAJ": 3264, "Br35H": 694},
+    "notumor_total_table1": 1754,
+    "zenodo_description_notumor_source": "Br35H"
+  }
+}

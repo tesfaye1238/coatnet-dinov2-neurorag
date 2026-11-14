@@ -1,0 +1,5 @@
+# Five-fold evaluation: neurofusion split --mode cv --k 5, then neurofusion cv --manifests manifest_fold*.csv
+# Validation is drawn only from each fold's training pool (10% of the pool). Fold sizes come from the real manifest.
+k: 5
+val_fraction_of_pool: 0.1
+seed: 0

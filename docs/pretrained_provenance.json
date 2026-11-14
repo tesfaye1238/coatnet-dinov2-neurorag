@@ -1,0 +1,30 @@
+{
+  "coatnet_0": {
+    "name": "coatnet_0",
+    "timm_name": "coatnet_0_rw_224",
+    "pretrained_tag": "sw_in1k",
+    "expected_dim": 768,
+    "img_size": 224,
+    "note": "timm coatnet_0_rw_224.sw_in1k; num_classes=0 gives global-average-pooled 768-d features",
+    "hf_hub_id": "timm/coatnet_0_rw_224.sw_in1k",
+    "hub_revision": "unpinned (latest main at download time)",
+    "timm_version": "1.0.28",
+    "verified_pooled_dim": 768,
+    "parameters_millions": 26.6666,
+    "hub_commit_sha_at_download": "6686c5427a459d5591f4c3bc72c22b2037cad39d"
+  },
+  "dinov2_vits14": {
+    "name": "dinov2_vits14",
+    "timm_name": "vit_small_patch14_dinov2",
+    "pretrained_tag": "lvd142m",
+    "expected_dim": 384,
+    "img_size": 224,
+    "note": "timm vit_small_patch14_dinov2.lvd142m (self-supervised), img_size=224 (position embeddings interpolated); CLS token",
+    "hf_hub_id": "timm/vit_small_patch14_dinov2.lvd142m",
+    "hub_revision": "unpinned (latest main at download time)",
+    "timm_version": "1.0.28",
+    "verified_pooled_dim": 384,
+    "parameters_millions": 21.6288,
+    "hub_commit_sha_at_download": "4610ca143709d58a633b6397a74412c2c3842454"
+  }
+}

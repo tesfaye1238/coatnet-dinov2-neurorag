@@ -1,0 +1,7 @@
+# Reported ablations (Table 5) use proposed.yaml training settings; only the model name changes:
+#   coatnet_only | dinov2_only | concat_no_attention | concat_se_r16 | sum_se_r8 | proposed
+# New controls (NOT in the manuscript): concat_mlp_control (capacity-comparable, no multiplicative gating).
+# Prediction ensemble of the two single-branch models: neurofusion.models.classifier.PredictionEnsemble.
+models: [coatnet_only, dinov2_only, concat_no_attention, concat_se_r16, sum_se_r8, proposed, concat_mlp_control]
+baselines: [GhostNetV2, ConvNeXt-T, Swin-Transformer-T, ESPNetV2, MobileNetV2, ShuffleNetV2]
+baseline_notes: "ESPNetV2 has no verified implementation here and raises BaselineUnavailable until one is registered."

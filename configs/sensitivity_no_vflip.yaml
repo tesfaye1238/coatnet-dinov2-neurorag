@@ -1,0 +1,13 @@
+# NEW EXPERIMENT (not in the manuscript): vertical flip disabled, because a vertical flip of an axial/sagittal/coronal
+# brain slice produces an anatomically implausible image. Compare against proposed.yaml as a separate experiment.
+model: proposed
+train:
+  batch_size: 32
+  peak_lr: 3.0e-4
+  weight_decay: 5.0e-4
+  warmup_epochs: 5
+  min_lr: 1.0e-6
+  max_epochs: 100
+  patience: 10
+augmentation:
+  vflip_p: 0.0
