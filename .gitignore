@@ -1,11 +1,11 @@
 # data, weights, outputs, private material (never committed)
-data/
-datasets/
-images/
-raw/
-runs/
-outputs/
-checkpoints/
+/data/
+/datasets/
+/images/
+/raw/
+/runs/
+/outputs/
+/checkpoints/
 *.pt
 *.pth
 *.ckpt
@@ -21,11 +21,11 @@ checkpoints/
 *.tar
 *.tar.gz
 *.npz
-rag_index/
-rag_sources/
-qdrant_storage/
-annotations_private/
-manuscript/
+/rag_index/
+/rag_sources/
+/qdrant_storage/
+/annotations_private/
+/manuscript/
 reviewer*/
 *.pdf
 *.docx
