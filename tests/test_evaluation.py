@@ -1,10 +1,10 @@
 import numpy as np
 import pandas as pd
 import pytest
-from conftest import synthetic_predictions
 from scipy import stats
 from sklearn.metrics import accuracy_score, f1_score, precision_score, recall_score, roc_auc_score
 
+from conftest import synthetic_predictions
 from neurofusion.constants import CLASS_NAMES
 from neurofusion.evaluation import calibration as C
 from neurofusion.evaluation.bootstrap import bootstrap_ci, paired_bootstrap_difference

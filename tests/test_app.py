@@ -4,9 +4,9 @@ import pathlib
 
 import pytest
 import torch
-from conftest import TinyBranch, TinyViT
 from PIL import Image
 
+from conftest import TinyBranch, TinyViT
 from neurofusion import app_logic as A
 from neurofusion.training.checkpoint import save_checkpoint
 

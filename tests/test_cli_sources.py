@@ -157,7 +157,6 @@ def test_cli_audit_manuscript_and_params(tmp_path, capsys):
 
 def test_cli_eval_compare_tables(tmp_path, capsys):
     from conftest import synthetic_predictions
-
     from neurofusion.evaluation.predict import save_predictions
 
     a = save_predictions(synthetic_predictions(120, acc=0.95, seed=1), tmp_path / "a.csv")
@@ -198,8 +197,8 @@ def test_cli_rag_build_fails_on_tampered_sources(tmp_path, capsys):
 def test_cli_train_predict_gradcam_robustness_smoke(tmp_path, synth_root, capsys, monkeypatch):
     """Whole classification CLI path on SYNTHETIC data with a tiny stand-in model (software smoke test only)."""
     import torch
-    from conftest import TinyBranch, TinyViT
 
+    from conftest import TinyBranch, TinyViT
     from neurofusion.models.classifier import FusionClassifier, ModelConfig
 
     def builder(name, pretrained):

@@ -1,7 +1,7 @@
 import pandas as pd
 import pytest
-from conftest import synthetic_predictions
 
+from conftest import synthetic_predictions
 from neurofusion.evaluation.predict import save_predictions
 from neurofusion.reporting.numeric_audit import (
     attainable,

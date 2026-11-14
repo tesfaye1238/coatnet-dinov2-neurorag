@@ -4,9 +4,9 @@ import numpy as np
 import pandas as pd
 import pytest
 import torch
-from conftest import TinyBranch, TinyViT
 from torch import nn
 
+from conftest import TinyBranch, TinyViT
 from neurofusion.constants import CLASS_NAMES
 from neurofusion.data import splits as S
 from neurofusion.data.dataset import ManifestDataset, make_loader

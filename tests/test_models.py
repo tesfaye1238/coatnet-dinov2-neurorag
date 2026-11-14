@@ -1,8 +1,8 @@
 import pytest
 import torch
-from conftest import TinyBranch
 from torch import nn
 
+from conftest import TinyBranch
 from neurofusion.models.backbones import (
     COATNET0,
     DINOV2_S14,
